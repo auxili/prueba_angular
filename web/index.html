@@ -3,10 +3,28 @@
     <head>
         <title></title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+        <link href="/js/bootstrap.js" rel="javascript" type="text/javascript">
         <script src="lib/angular/js/angular.js" language="javascript" type="text/javascript"></script>
         <script src="index.js" language="javascript" type="text/javascript"></script>
     </head>
     <body ng-controller="indexCtrl">
-       Este es mi nombre: {{nombre}}
+        <div align="center" style="margin: 40px 50px;"> 
+            <input ng-model="busque" type="text" class="input-medium search-query">
+            <button ng-click="buscar()" class="btn">buscar</button>
+            <table class="table table-bordered">
+                <tr>
+                    <th>Id</th><th>Codigo</th><th>Nombre</th><th>Cif</th><th>Tipo Entidad</th><th></th><th></th>
+                </tr>
+                <tr ng-repeat="entidadBancaria in entidadesBancarias">
+                    <td>{{entidadBancaria.id}}</td>
+                    <td>{{entidadBancaria.codigoEntidad}}</td>
+                    <td>{{entidadBancaria.nombre}}</td>
+                    <td>{{entidadBancaria.cif}}</td>
+                    <td>{{entidadBancaria.tipoEntidadBancaria}}</td>
+                    <td><button ng-click="ver()" class="btn">Ver</button></td>
+                    <td><button ng-click="borrar()" class="btn">Borrar</button></td>
+            </table>
+        </div>
     </body>
 </html>
