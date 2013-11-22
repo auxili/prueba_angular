@@ -1,26 +1,26 @@
-<!--
-To change this template, choose Tools | Templates
-and open the template in the editor.
--->
 <!DOCTYPE html>
-<html>
+<html ng-app="app">
     <head>
         <title></title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+        <link href="/js/bootstrap.js" rel="javascript" type="text/javascript">
+        <script src="lib/angular/js/angular.js" language="javascript" type="text/javascript"></script>
+        <script src="read.js" language="javascript" type="text/javascript"></script>
     </head>
-    <body>
-       <table  class="table table-bordered">
+    <body ng-controller="readCtrl">
+        <div align="left" style="margin: 40px 50px;"> 
+            <table class="table table-bordered">
                 <tr>
-                    <th>Id</th><th>Codigo</th><th>Nombre</th><th>Cif</th><th>Tipo Entidad</th><th></th><th></th>
+                    <th>Parametro</th><th>Valor</th>
                 </tr>
-                <tr>
-                    <td>{{entidadBancaria.id}}</td>
-                    <td>{{entidadBancaria.codigoEntidad}}</td>
-                    <td>{{entidadBancaria.nombre}}</td>
-                    <td>{{entidadBancaria.cif}}</td>
-                    <td>{{entidadBancaria.tipoEntidadBancaria}}</td>
-                    <td><button ng-click="ver(entidadBancaria.id)" class="btn">Ver</button></td>
-                    <td><button ng-click="borrar(entidadBancaria.id)" class="btn">Borrar</button></td>
+                    <tr><td>Id</td><td>{{entidadBancaria.id}}</td></tr>
+                    <tr><td>Codigo</td><td>{{entidadBancaria.codigoEntidad}}</td></tr>
+                    <tr><td>Nombre</td><td>{{entidadBancaria.nombre}}</td></tr>
+                    <tr><td>Cif</td><td>{{entidadBancaria.cif}}</td></tr>
+                    <tr><td>Tipo</td><td>{{entidadBancaria.tipoEntidadBancaria}}</td>
+
             </table>
+        </div>
     </body>
 </html>

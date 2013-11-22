@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html ng-app="app">
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+        <link href="/js/bootstrap.js" rel="javascript" type="text/javascript">
+        <script src="lib/angular/js/angular.js" language="javascript" type="text/javascript"></script>
+        <script src="insert.js" language="javascript" type="text/javascript"></script>
+    </head>
+    <body ng-controller="insertCtrl">
+        <div align="left" style="margin: 40px 50px;"> 
+            <div id="contieneTabla" style="margin: 40px 100px">
+            <h5>Inserte su entidad Bancaria nueva</h5>
+           
+                <input type="text" ng-model="entidadBancaria.idEntidad" class="input-small" placeholder="IdEntidad"><br>
+                <input type="text" ng-model="entidadBancaria.codigoEntidad" class="input-small" placeholder="Codigo"><br>
+                <input type="text" ng-model="entidadBancaria.nombre" class="input-small" placeholder="C.I.F."><br>
+                <input type="text" ng-model="entidadBancaria.cif" class="input-small" placeholder="Nombre"> <br>
+
+
+                <select ng-model="entidadBancaria.tipoEntidadBancaria">
+                    <option selected>Elije entidad</option>
+                    <option value="">Caja de ahorros</option>
+                    <option value="">Banco</option>
+                    <option value="">Cooperativa Credito</option>
+                    <option value="">Establ. Financiero</option>
+                </select>
+                <br/><br/><input type="submit" class="btn" ng-click="insert()">
+            
+                <p><a href="index.html">Inicio</a></p>
+        </div>
+            <table class="table table-bordered">
+                <tr>
+                    <th>Parametro</th><th>Valor</th>
+                </tr>
+                    <tr><td>Id</td><td>{{entidadBancaria.id}}</td></tr>
+                    <tr><td>Codigo</td><td>{{entidadBancaria.codigoEntidad}}</td></tr>
+                    <tr><td>Nombre</td><td>{{entidadBancaria.nombre}}</td></tr>
+                    <tr><td>Cif</td><td>{{entidadBancaria.cif}}</td></tr>
+                    <tr><td>Tipo</td><td>{{entidadBancaria.tipoEntidadBancaria}}</td>
+
+            </table>
+        </div>
+    </body>
+</html>

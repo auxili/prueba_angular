@@ -1,6 +1,12 @@
 var app = angular.module("app", [])
 app.controller("readCtrl", function($scope, $http) {
 
+
+var parameters = getQueryStringParameters();
+var idEntidadBancaria = parameters.id;
+
+//funcion devuelve todos los parametros
+//$scope.parametros = null;
     function getQueryStringParameters() {
         var queryString = window.location.search.substr(1); //El substr(1) es para quitarel "?" del principio;
         var parejaParametros = queryString.split('&');
@@ -18,13 +24,10 @@ app.controller("readCtrl", function($scope, $http) {
                 }
             }
         }
-
-
         return parametros;
     }
-    ;
-    $http.get("http://localhost:8084/daIgual/entidadeBancaria.json.jsp?id=" + q).success(function(result) {
+    
+    $http.get("http://localhost:8084/daIgual/entidadBancaria.json.jsp?id="+idEntidadBancaria).success(function(result) {
         $scope.entidadBancaria = result;
     })
-
 })
